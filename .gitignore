@@ -1,0 +1,19 @@
+*.pyc
+test*
+results/
+stat/
+*.xml
+*.iml
+posterior_problem.ipynb
+SVGP_Regression_CUDA.ipynb
+max_val.png
+fail1.png
+elevators.mat
+# functions/trained_policies/
+initial_data/
+index.html.1
+dataset/uk_housing.csv
+
+functions/muscle/SB3/
+functions/muscle/mj_HandHold/
+*.DS_Store
