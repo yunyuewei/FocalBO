@@ -1,1 +1,1 @@
-python optimization_loop.py --model $1 --algo $2 --acqf qei --induce_size 20 --max_loop_num 3 --init_num 20 --eval_num 500 --batch_size 20 --task Ackley
+python optimization_loop.py --model $1 --algo $2 --acqf qei --induce_size 20 --max_loop_num 1 --init_num 20 --eval_num 500 --batch_size 1 --task Ackley --use_depth 1

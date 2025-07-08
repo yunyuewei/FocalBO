@@ -31,14 +31,14 @@ parser.add_argument('--model', default='fvgp', type=str, help='GP model name')
 parser.add_argument('--algo', default='bo', type=str, help='BO optimizer name')
 parser.add_argument('--acqf', default='ts', type=str, help='BO acquisition function name')
 parser.add_argument('--induce_size', default=20, type=int, help='Induce size of sparse GP')
-parser.add_argument('--max_loop_num', default=3, type=int, help='Optimization depth for Focal BO')
+parser.add_argument('--max_loop_num', default=1, type=int, help='Optimization depth for Focal BO')
 parser.add_argument('--use_depth', default=0, type=int, help='1 for use in-depth optimization 0 for not use')
 
 parser.add_argument('--round', default=10, type=int, help='Round of optimization')
 parser.add_argument('--init_num', default=20, type=int, help='Initial point number of each round')
 parser.add_argument('--eval_num', default=300, type=int, help='Evaluation number of each round')
 parser.add_argument('--batch_size', default=10, type=int, help='Batch size of each iteration')
-parser.add_argument('--auto', default=0, type=int, help='whether adaptivaly adjust the depth')
+parser.add_argument('--auto', default=1, type=int, help='whether adaptivaly adjust the depth')
 
 parser.add_argument('--task', default='Ackley', type=str, help='Optimization task name')
 
@@ -144,7 +144,7 @@ if __name__ == '__main__':
             return objective(unnorm_x).to(dtype=dtype, device=device)
 
     # n_repeat = 10
-    num_epochs = 1000
+    num_epochs = 200
     gen_ini = True
     # if isinstance(objective, mujoco_gym_env.MujocoGymEnv) or isinstance(objective, lunar_land.Lunar):
     if not isinstance(objective, SyntheticTestFunction) and not isinstance(objective, GPFunction):
