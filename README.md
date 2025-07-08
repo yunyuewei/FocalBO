@@ -16,7 +16,7 @@ To replicate the experiments outlined in the paper, run the following command:
 bash scripts/run_{task}.sh {algo} {opt}
 ```
 
-where the variables `task`, `algo`, and `opt` should be replaced with the desired task, algorithm, and optimization method.
+where the variables `task`, `algo`, and `opt` should be replaced with the desired task, algorithm, and optimization method. (The muscle task will be released soon.)
 
 ## BibTeX
 

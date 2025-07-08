@@ -20,8 +20,8 @@ from gp_fun import GPFunction
 from turbo_botorch import TurboState, update_state, generate_cand
 from acqf import thompson_sampling, expected_improvement, q_expected_improvement, \
     upper_confidence_bound, q_uppper_confidence_bound, focal_acqf_opt, focal_acqf_opt_sample, probability_of_improvement
-from functions import mujoco_gym_env, lunar_land, push_function
-from functions.muscle.task_env_mjhand import MuscleSynergyEnv
+# from functions import mujoco_gym_env, lunar_land, push_function
+# from functions.muscle.task_env_mjhand import MuscleSynergyEnv
 
 
 parser = argparse.ArgumentParser(description='BO experiment')
@@ -333,7 +333,7 @@ if __name__ == '__main__':
                         tr = cand_tr =  torch.cat((torch.zeros(dim).reshape(1, -1), torch.ones(dim).reshape(1, -1))).to(dtype=dtype, device=device)
                 # Define the acquisition function
 
-                if gp_model == 'fvgp' or args.use_depth == 1 and len(train_X) >= induce_size: # sparse to dense optimization for fvgp and vanilla BO
+                if gp_model == 'fvgp' or args.use_depth == 1: # sparse to dense optimization for fvgp and vanilla BO
 
                     train_new_gp = True if gp_model == 'fvgp' else False
                     

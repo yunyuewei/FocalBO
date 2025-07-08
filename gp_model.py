@@ -20,13 +20,13 @@ from focalized_elbo import FocalizedVariationalELBO
 
 from SPGP_utils import pack_hyps, unpack_hyps, SPGP_likelihood, OGP
 
-import _pyvecch 
-import pyvecch
-from pyvecch.nbrs import ExactOracle
-from pyvecch.models import RFVecchia
-from pyvecch.prediction import IndependentRF
-from pyvecch.training import fit_model
-from pyvecch.input_transforms import Identity
+# import _pyvecch 
+# import pyvecch
+# from pyvecch.nbrs import ExactOracle
+# from pyvecch.models import RFVecchia
+# from pyvecch.prediction import IndependentRF
+# from pyvecch.training import fit_model
+# from pyvecch.input_transforms import Identity
 
 from botorch.optim.stopping import ExpMAStoppingCriterion
 from gpytorch.mlls import ExactMarginalLogLikelihood
@@ -62,8 +62,8 @@ class BoTorchWrapper(GPyTorchModel):
     
     def forward(self, X, *args, **kwargs) -> MultivariateNormal:
         X = self.transform_inputs(X)
-        if type(self.model)==pyvecch.models.rf_vecchia.RFVecchia:
-            X = X.to(device='cpu')
+        # if type(self.model)==pyvecch.models.rf_vecchia.RFVecchia:
+        #     X = X.to(device='cpu')
         return self.model(X)
     
 

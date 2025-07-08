@@ -19,7 +19,7 @@ from botorch.sampling.normal import SobolQMCNormalSampler
 
 from gp_model import BoTorchWrapper, train_fvgp
 from turbo_botorch import generate_cand
-import pyvecch
+# import pyvecch
 
 
 acqf_dict = {
